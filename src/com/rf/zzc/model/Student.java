@@ -6,6 +6,9 @@ public class Student {
 	private int id;
 	private String name;
 	private int age;
+	public Student() {
+		super();
+	}
 	public Student(int id, String name, int age, Date birthday) {
 		super();
 		this.id = id;
@@ -37,6 +40,10 @@ public class Student {
 	}
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
+	}
+	@Override
+	public String toString() {
+		return "id=" + id + ", name=" + name + ", age=" + age + ", birthday=" + birthday ;
 	}
 	
 	

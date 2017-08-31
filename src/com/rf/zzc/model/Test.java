@@ -14,6 +14,10 @@ public class Test {
 		//sm.select();
 		//sm.delete(s);
 		//sm.update(s);
+		for(Student ss:sm.select2()) {
+			System.out.println(ss.toString());
+		}
+			
 	}
 
 }
