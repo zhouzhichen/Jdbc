@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import com.rf.zzc.model.Student;
 
 public class DBUtil {
-	private static final String URL = "jdbc:mysql://localhost:3306/test1";
+	private static final String URL = "jdbc:mysql://localhost:3306/test1?useSSL=false";
 	private static final String user = "root";
 	private static final String password = "1234";
 
@@ -40,6 +40,30 @@ public class DBUtil {
 		 */
 		return conn;
 	}
+	
+	public static void close(Connection con, PreparedStatement ps, ResultSet rs) {  
+        if (rs != null){  
+            try {  
+                rs.close();  
+            } catch (SQLException e) {  
+                e.printStackTrace();  
+            }  
+        }  
+        if (ps != null){  
+            try {  
+                ps.close();  
+            } catch (SQLException e) {  
+                e.printStackTrace();  
+            }  
+        }  
+        if (con != null){  
+            try {  
+                con.close();  
+            } catch (SQLException e) {  
+                e.printStackTrace();  
+            }  
+        }  
+    }  
 
 	
 }
